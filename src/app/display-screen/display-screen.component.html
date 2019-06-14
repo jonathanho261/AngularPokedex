@@ -1,0 +1,14 @@
+<ng-template [ngIf]="pokemon" [ngIfElse]="notFound">
+  <div class="name">
+    <h1>#{{pokemon.id}}. {{pokemon.name | uppercase}}</h1>
+  </div>
+  <div class="sprite">
+    <img src="{{this.pokemon.sprites.front_default}}" height="150px">
+  </div>
+</ng-template>
+   
+<ng-template #notFound>
+  <h1>Pokemon not found</h1>
+</ng-template>
+
+<button (click)="goBack()">Back</button>

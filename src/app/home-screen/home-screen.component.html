@@ -1,0 +1,16 @@
+<div id="searchComponent">
+  <form (ngSubmit)="submitForm(searchBox.value)">
+    <input #searchBox class="input" type="text" (input)="search(searchBox.value)" />
+  </form>
+  <ul class="search-result">
+    <li *ngFor="let pokemon of matchingPokemon">
+      <a routerLink="/pokemon/{{pokemon.name}}"> 
+        {{pokemon.name}}
+      </a>
+    </li>
+  </ul>
+  <a routerLink="/pokemon/{{searchBox.value}}">
+    <button>Search</button>
+  </a>
+</div>
+
